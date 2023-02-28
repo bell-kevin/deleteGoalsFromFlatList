@@ -8,13 +8,15 @@ export default function App() {
     const [courseGoals, setCourseGoals] = useState([]);
 
     function addGoalHandler(enteredGoalText) {
-        setCourseGoals(currentGoals => [...currentGoals, {
+        setCourseGoals((currentCourseGoals) => [...currentCourseGoals, {
             text: enteredGoalText, id: Math.random().toString()
         }]);
     }
 
     function deleteGoalHandler(goalId) {
-        console.log('DELETE');
+        setCourseGoals(currentCourseGoals => {
+            return currentCourseGoals.filter((goal) => goal.id !== goalId);
+        });
     }
 
     return (
@@ -27,6 +29,7 @@ export default function App() {
                         return (
                             <GoalItem
                                 text={itemData.item.text}
+                                id={itemData.item.id}
                                 onDeleteItem={deleteGoalHandler}
                             />
                         );

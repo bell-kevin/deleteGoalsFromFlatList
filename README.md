@@ -1,5 +1,7 @@
 # Delete Goals from FlatList
 
+https://github.com/academind/react-native-practical-guide-code/tree/02-basics
+
 React Native goal setting app.
 
 Create one app. for both Android and iOS (Apple) using one computer alorithm for both apps. You'll need Visual Studio Code and Android Studio to get started:
